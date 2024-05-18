@@ -1,0 +1,39 @@
+#views.py
+
+#Lecture 9 = Cookies Example 1
+# def cookie(request):
+#     print(request.COOKIES)
+#     response = HttpResponse('Testing cookies')
+#     response.set_cookie('cookie1',50)
+#     response.set_cookie('cookie2',50,max_age=5)
+#     return response
+
+
+def home(request):
+    authors = Author.objects.all()
+
+#Lecture 9 = Session Example
+    # visits = request.session.get('visits',0)+1
+    # request.session['visits']=visits
+    # if visits>1:
+    #     del(request.session['visits'])
+    #return render(request,'myapp/home.html',{'authors':authors,'visits':visits})
+
+#Lecture 9 = Cookie Example 2
+    if 'visits' in request.COOKIES:
+        visits = request.COOKIES['visits']
+        visits = int(visits)+1
+    else:
+        visits = 0
+    response = render(request,'myapp/home.html',{'authors':authors,'visits':visits})
+    response.set_cookie('visits',value=visits,max_age=5)
+    return response
+
+
+#home.html
+<h2>You have visited this page {{ visits }} time{{ visits|pluralize }} </h2>
+#OR for Cookies
+<h2> Cookie Value = {{visits}} </h2> 
+
+#urls.py
+path('cookie/',views.cookie), #cookies example1

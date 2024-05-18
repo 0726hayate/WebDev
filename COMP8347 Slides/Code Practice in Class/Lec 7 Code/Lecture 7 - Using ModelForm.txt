@@ -1,0 +1,32 @@
+#urls.py
+path('order/',views.order,name='order'),
+
+#views.py
+from .forms import BookForm
+def order(request):
+    form = BookForm()
+    return render(request,'myapp/order.html',{'form':form})
+
+#forms.py
+from django import forms
+from .models import Book
+
+class BookForm(forms.ModelForm):
+    class Meta:
+        model=Book
+        fields=['title']
+	#fields='__all__'
+        labels={'title':'Title'}
+        widgets={'title':forms.Textarea}
+
+
+#order.html
+{% extends 'myapp/base.html' %}
+{% block content %}
+    <h3>Place your order here</h3>
+<form action="{% url 'order' %}" method="post">
+{% csrf_token %}
+    {{ form }}
+<input type="submit" value="order here">
+</form>
+{% endblock %}

@@ -103,7 +103,6 @@ app.delete("/jokes/:id", (req,res)=>{
 
 //8. DELETE All jokes
 
-
 app.listen(port, () => {
   console.log(`Successfully started server on port ${port}.`);
 });

@@ -1,0 +1,24 @@
+#urls.py
+path('order/',views.order,name='order'),
+
+#views.py
+def order(request):
+    return render(request,'myapp/order.html')
+
+#order.html
+{% extends 'myapp/base.html' %}
+{% block content %}
+    <h3>Place your order here</h3>
+<form action="{% url 'order' %}" method="post">
+{% csrf_token %}
+    <label for="title">title</label>
+    <input id="title" type="text" name="title">
+    <label for="author">author</label>
+    <input id="author" type="text" name="author">
+    <select id="kind" name="kind">
+        <option value="Printed">Printed</option>
+        <option value="PDF">PDF</option>
+    </select>
+<input type="submit" value="order here">
+</form>
+{% endblock %}
