@@ -1,6 +1,0 @@
-import matplotlib.pyplot as plt
-sales = ['10','20']
-titles = ['east','west']
-plt.pie(sales,labels=titles)
-plt.title('Sales of xyz')
-plt.show()
