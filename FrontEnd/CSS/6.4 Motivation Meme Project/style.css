@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 body {
     background-color: black;
 }
@@ -43,4 +44,27 @@ h1 {
     border: 5px solid white;
     width: 100%;
 >>>>>>> 19b2325 (Initial commit)
+=======
+body {
+    background-color: black;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 3rem;
+}
+
+.poster{
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 100px;
+    color: white;
+    font-family: "Libre BaskerVille", serif;
+    text-align: center;
+}
+
+.motivation-img{
+    border: 5px solid white;
+    width: 100%;
+>>>>>>> origin/master
 }

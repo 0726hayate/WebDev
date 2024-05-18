@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 #red{
     color: red;
 }
@@ -55,4 +56,33 @@ img {
 .color-title{
     font-weight: normal;
 >>>>>>> 19b2325 (Initial commit)
+=======
+#red{
+    color: red;
+}
+
+#blue{
+    color:blue;
+}
+
+#orange{
+    color:orange;
+}
+
+#green{
+    color:green;
+}
+
+#yellow{
+    color:yellow;
+}
+
+img {
+    height: 200px;
+    width: 200px;
+}
+
+.color-title{
+    font-weight: normal;
+>>>>>>> origin/master
 }

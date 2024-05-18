@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 .external{
     color: green;
 }
@@ -21,4 +22,16 @@
 .internal{
     color: red;
 >>>>>>> 19b2325 (Initial commit)
+=======
+.external{
+    color: green;
+}
+
+.inline{
+    color:blue;
+}
+
+.internal{
+    color: red;
+>>>>>>> origin/master
 }
