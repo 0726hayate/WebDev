@@ -1,0 +1,33 @@
+ol {
+  margin-left: -40px;
+  margin-top: -20px;
+  list-style-position: inside;
+}
+
+/* set for paragraph elements */
+p {
+  color: red;
+}
+
+/*set for class of note*/
+
+.note {
+
+  font-size: 20px;
+
+}
+
+/*set for  element with an id of "id-selector-demo" to "color: green*/
+#id-selector-demo {
+  color: green;
+}
+
+/*set for the li elements that have the "value" attribute set to "4"*/
+li[value = "4"] {
+  color: blue;
+}
+
+/*set all elements*/
+* {
+  text-align: center;
+}

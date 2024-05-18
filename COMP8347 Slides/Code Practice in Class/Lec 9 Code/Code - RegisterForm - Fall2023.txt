@@ -1,0 +1,28 @@
+#urls.py
+path('register/',views.registerhere.as_view()),
+
+#views.py
+from django.views.generic.edit import CreateView
+from django.contrib.auth.forms import UserCreationForm
+
+class registerview(CreateView):
+    form_class = UserCreationForm
+    template_name = 'myapp/register.html'
+    success_url = '/'
+
+#myapp/register.html
+<body>
+<form method="post">
+    {% csrf_token %}
+    <table>{{ form.as_table }}</table>
+    <input type="submit" name="Register">
+</form>
+</body>
+
+#Extra Method to check if the user is authenticated or not under the registerview
+from djanngo.shortcuts import redirect
+
+def get(self,request,*args,**kwargs):
+	if self.request.is_authenticated:
+		return redirect('/')
+	return super().get(request,*args,**kwargs)
