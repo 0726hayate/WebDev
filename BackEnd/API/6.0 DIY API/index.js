@@ -102,6 +102,17 @@ app.delete("/jokes/:id", (req,res)=>{
 });
 
 //8. DELETE All jokes
+app.delete("/all", (req,res)=>{
+  const userKey = req.query.key;
+  if(userKey === masterKey){
+    jokes = [];
+    res.sendStatus(200);
+  }else {
+    res.status(404).send({ error: 'Unauthorized action' });
+  }
+  
+});
+
 
 app.listen(port, () => {
   console.log(`Successfully started server on port ${port}.`);
