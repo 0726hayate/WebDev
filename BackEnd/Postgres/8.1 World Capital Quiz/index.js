@@ -21,7 +21,7 @@ db.query("SELECT * FROM capitals", (err, res)=>{
   if(err){
     console.error("error exe query", err.stack);
   }else{
-    quiz = res.rows
+    quiz = res.rows;
   }
   db.end();
 });
